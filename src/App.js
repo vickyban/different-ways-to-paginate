@@ -1,4 +1,4 @@
-import Gallery from './components/Gallery/Gallery';
+import Gallery from './components/SimplePaginateGallery';
 import { UnsplashProvider } from './context/unsplashContext';
 
 function App() {
