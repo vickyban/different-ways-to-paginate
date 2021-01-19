@@ -1,6 +1,6 @@
 import React from 'react';
 import { usePaginationGallery } from '../../context/SimplePaginationContext';
-import Image from '../Image';
+import Image from '../common/Image';
 
 export default function Gallery() {
 	const { photos } = usePaginationGallery();

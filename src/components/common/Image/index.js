@@ -5,6 +5,7 @@ const Image = memo(({ photo }) => {
 		<div>
 			<img
 				className="gallery__img"
+				alt={photo.description ?? 'gallery photo'}
 				src={photo.urls.regular}
 				style={{
 					backgroundColor: photo.color,

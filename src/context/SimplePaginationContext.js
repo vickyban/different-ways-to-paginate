@@ -46,8 +46,32 @@ const galleryReducer = (state, event) => {
 	}
 };
 
-export const useGallery = (api) => {
-	const [state, dispatch] = useReducer(galleryReducer, initState);
+const infiniteGalleryReducer = (state, event) => {
+	const { type, data } = event;
+	switch (type) {
+		case EventTypes.REQUEST_FETCH:
+			return {
+				...state,
+				query: data.query || state.query,
+				page: data.page,
+				status: Status.LOADING,
+				limit: data.limit || state.limit,
+			};
+		case EventTypes.RESOLVED_FETCH:
+			return {
+				...state,
+				total: data.total,
+				totalPages: data.total_pages,
+				photos: [...state.photos, ...data.results],
+				status: Status.IDLE,
+			};
+		default:
+			return state;
+	}
+};
+
+export const useGallery = (api, infinteScroll = false) => {
+	const [state, dispatch] = useReducer(infinteScroll ? infiniteGalleryReducer : galleryReducer, initState);
 	const { status, query, page, limit, totalPages } = state;
 
 	const requestFetch = useCallback(
@@ -95,8 +119,8 @@ export const useGallery = (api) => {
 
 const PaginationGalleryContext = createContext();
 
-export const PaginationGalleryProvider = ({ children, apiClient }) => {
-	const gallery = useGallery(apiClient);
+export const PaginationGalleryProvider = ({ children, apiClient, infinteScroll }) => {
+	const gallery = useGallery(apiClient, infinteScroll);
 
 	return <PaginationGalleryContext.Provider value={gallery}>{children}</PaginationGalleryContext.Provider>;
 };

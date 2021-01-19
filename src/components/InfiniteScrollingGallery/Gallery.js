@@ -1,13 +1,11 @@
 import React from 'react';
-import { useUnsplashContext } from '../../context/unsplashContext';
-import Image from '../Image';
+import Image from 'components/common/Image';
 import './Gallery.css';
-import { useGallery } from './useGallery';
 import InfiniteScroll from 'react-infinite-scroll-component';
+import { usePaginationGallery } from 'context/SimplePaginationContext';
 
 export default function Gallery() {
-	const { unsplash } = useUnsplashContext();
-	const { photos, requestFetch, page, query, hasMore } = useGallery(unsplash);
+	const { photos, requestFetch, page, query, hasMore } = usePaginationGallery();
 
 	const fetchMore = () => requestFetch(query, page + 1);
 

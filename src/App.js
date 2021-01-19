@@ -1,5 +1,5 @@
-import Gallery from './components/SimplePaginateGallery';
-import { UnsplashProvider } from './context/unsplashContext';
+import Gallery from 'components/SimplePaginateGallery';
+import { UnsplashProvider } from 'context/UnsplashContext';
 
 function App() {
 	return (
