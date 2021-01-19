@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from 'components/common/Image';
+import { Image } from 'components/common';
 import './Gallery.css';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { usePaginationGallery } from 'context/SimplePaginationContext';

@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { usePaginationGallery } from '../../context/SimplePaginationContext';
+import { usePaginationGallery } from 'context/SimplePaginationContext';
 import PaginationItem from './PaginationItem';
 
 const range = (val, max, limit = 5) => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useUnsplashContext } from 'context/UnsplashContext';
 import Gallery from './Gallery';
-import './Gallery.css';
+import './index.css';
 import { PaginationGalleryProvider } from 'context/SimplePaginationContext';
 import Pagination from './Pagination';
 
