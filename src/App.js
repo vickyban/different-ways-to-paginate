@@ -1,7 +1,9 @@
-import SimpleGallery from 'components/SimplePaginateGalleryView';
-import InfiniteGallery from 'components/InfiniteScrollingGalleryView';
 import { UnsplashProvider } from 'context/UnsplashContext';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
+import SimpleGallery from 'components/SimplePaginateGalleryView';
+import InfiniteGallery from 'components/InfiniteScrollingGalleryView';
+import NoteBoardView from 'components/NoteBoardView';
 
 function App() {
 	return (
@@ -13,6 +15,9 @@ function App() {
 					</Route>
 					<Route path="/infiniteGallery">
 						<InfiniteGallery />
+					</Route>
+					<Route path="/noteboard">
+						<NoteBoardView />
 					</Route>
 				</Switch>
 			</Router>

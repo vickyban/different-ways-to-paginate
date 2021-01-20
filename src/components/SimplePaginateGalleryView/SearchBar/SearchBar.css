@@ -1,0 +1,27 @@
+.searchbar {
+	width: 100%;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	display: flex;
+	background-color: #f3f3f3;
+}
+
+.searchbar__input {
+	flex: 1;
+	outline: none;
+	border: none;
+	padding: 8px;
+}
+
+.searchbar__clear-btn {
+	padding-left: 8px;
+	padding-right: 8px;
+}
+
+.searchbar__submit-btn {
+	height: 36px;
+	width: 36px;
+}
+.searchbar__submit-btn:hover {
+	background-color: tomato;
+}

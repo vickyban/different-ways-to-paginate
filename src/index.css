@@ -16,3 +16,12 @@ body {
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+
+.btn {
+	outline: none;
+	border: none;
+}
+
+.transparent {
+	background-color: transparent;
+}
